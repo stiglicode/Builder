@@ -6,10 +6,10 @@
     "build": "bash ./scripts/build/build.sh",
     "build:types": "bash ./scripts/build/build.types.sh",
     "build:src": "bash ./scripts/build/build:source.sh",
-    "dev": "node ./dist/source/index.js"
+    "dev": "bash ./scritps/run.sh"
   },
   "bin": {
-    "builder": "./dist/source/index.js"
+    "builder": "bash ./scritps/run.sh"
   },
   "main": "dist/source/index.js",
   "type": "commonjs",
