@@ -1,5 +1,5 @@
 {
-  "name": "builder",
+  "name": "ac-builder",
   "version": "0.0.1",
   "description": "Script which boost your productivity",
   "scripts": {
@@ -9,7 +9,7 @@
     "dev": "bash ./scritps/run.sh"
   },
   "bin": {
-    "builder": "bash ./scritps/run.sh"
+    "builder": "node ./dist/source/index.js"
   },
   "main": "dist/source/index.js",
   "type": "commonjs",
