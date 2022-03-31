@@ -1,3 +1,3 @@
 #! /bin/bash
 
-node "./dist/source/index.js" -c
+node ./dist/source/index.js
