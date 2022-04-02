@@ -8,9 +8,7 @@
     "build:src": "bash ./scripts/build/build:source.sh",
     "dev": "bash ./scritps/run.sh"
   },
-  "bin": {
-    "builder": "node ./dist/source/index.js"
-  },
+  "bin": "./dist/source/index.js",
   "main": "dist/source/index.js",
   "type": "commonjs",
   "types": "dist/types.ts",
