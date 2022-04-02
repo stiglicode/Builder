@@ -1,6 +1,6 @@
 {
   "name": "ac-builder",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Script which boost your productivity",
   "scripts": {
     "build": "bash ./scripts/build/build.sh",
@@ -8,7 +8,9 @@
     "build:src": "bash ./scripts/build/build:source.sh",
     "dev": "bash ./scritps/run.sh"
   },
-  "bin": "./dist/source/index.js",
+  "bin": {
+    "builder": "./dist/source/index.js"
+  },
   "main": "dist/source/index.js",
   "type": "commonjs",
   "types": "dist/types.ts",
