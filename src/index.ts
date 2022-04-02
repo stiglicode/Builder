@@ -13,7 +13,6 @@ const { createSpinner } = require("nanospinner");
 const chalk = require("chalk");
 const fs = require("fs");
 const fsPromise = fs.promises;
-const yargs = require("yargs");
 
 // Todo: Osetrit scenar ak bude komponent uz existovat
 // Todo: Pridat globap_path ak path existuje
@@ -63,7 +62,7 @@ class __Main__ {
   };
 
   private existComponent = (): IParsedTemplates | undefined => {
-    const prompt: string = this.initPrompt().component;
+    const prompt: string = this.initPrompt();
 
     if (!prompt.includes(":")) {
       throw new Error("Script doesn't have correct format");
@@ -79,13 +78,8 @@ class __Main__ {
     }
   };
 
-  private initPrompt = (): { component: string } => {
-    return yargs.usage("Usage: -c <name>").option("-c", {
-      alias: "component",
-      describe: "Component name",
-      type: "string",
-      demandOption: true,
-    }).argv;
+  private initPrompt = (): string => {
+    return process.argv.slice(2)[0];
   };
 
   private LoadConfigFile = (): IEntryConfigFiles => {
