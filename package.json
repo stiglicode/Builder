@@ -1,6 +1,6 @@
 {
   "name": "ac-builder",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Script which boost your productivity",
   "scripts": {
     "build": "bash ./scripts/build/build.sh",
