@@ -1,3 +1,3 @@
 #! /bin/bash
 
-node ./dist/source/index.js
+node ./dist/index.js asda:asdasd

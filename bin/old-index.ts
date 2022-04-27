@@ -7,9 +7,11 @@ import {
   ISubDirs,
   ITemplateFileStructure,
   ITemplatePath,
+  ITemplates,
 } from "./types";
+import { createSpinner } from "nanospinner";
 
-const { createSpinner } = require("nanospinner");
+// const { createSpinner } = require("nanospinner");
 const chalk = require("chalk");
 const fs = require("fs");
 const fsPromise = fs.promises;
@@ -44,12 +46,15 @@ class __Main__ {
   }
 
   private init = (): void => {
-    Object.entries(this.config.templates).map(([property, value]) => {
-      this.components.push({
-        name: property,
-        ...value,
-      });
-    });
+    Object.entries<ITemplates>(this.config.templates).map(
+      ([property, value]) => {
+        console.log([property, value]);
+        this.components.push({
+          ...value,
+          name: property,
+        });
+      }
+    );
   };
 
   private validateTemplates = (): boolean => {
@@ -82,13 +87,13 @@ class __Main__ {
     return process.argv.slice(2)[0];
   };
 
-  private LoadConfigFile = (): IEntryConfigFiles => {
+  private LoadConfigFile = async (): IEntryConfigFiles => {
     try {
-      return require(`${process.cwd()}/builder.config.js`);
+      const result = await require(`${process.cwd()}/builder.config.js`);
+      console.log(`${process.cwd()}/builder.config.js`);
+      return result;
     } catch (er) {
       throw new Error("Config file doesn't exist!");
-    } finally {
-      console.log("Config file was loaded successfuly");
     }
   };
 

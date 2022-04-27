@@ -47,3 +47,7 @@ export interface ISubDirs {
   template: ITemplateFileStructure;
   path: string;
 }
+
+export type DividerType = ":";
+
+export type FCValidation = () => boolean;

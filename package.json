@@ -1,13 +1,12 @@
 {
-  "name": "ac-builder",
-  "version": "0.0.5",
-  "description": "Script which boost your productivity",
+  "name": "my-webpack-project",
+  "version": "1.0.0",
+  "description": "My webpack project",
   "scripts": {
-    "build": "bash ./scripts/build/build.sh",
-    "build:types": "bash ./scripts/build/build.types.sh",
-    "build:src": "bash ./scripts/build/build:source.sh",
-    "dev": "bash ./scripts/build/build.sh && node ./dist/source/index.js",
-    "start": "node ./dist/source/index.js"
+    "dev:start": "bash ./scripts/build/build:dev.sh && bash ./scripts/run.sh",
+    "start": "bash ./scripts/run.sh",
+    "dev": "bash ./scripts/build/build:dev.sh",
+    "build": "bash ./scripts/build/build:prod.sh"
   },
   "bin": {
     "builder": "./dist/source/index.js"
@@ -32,10 +31,21 @@
   },
   "devDependencies": {
     "@types/node": "^17.0.23",
+    "@types/webpack": "^5.28.0",
     "@typescript-eslint/eslint-plugin": "^5.16.0",
     "@typescript-eslint/parser": "^5.16.0",
+    "@webpack-cli/generators": "^2.4.2",
+    "clean-webpack-plugin": "^4.0.0",
+    "copy-webpack-plugin": "^10.2.4",
+    "declaration-bundler-webpack-plugin": "^1.0.3",
     "eslint": "^8.12.0",
-    "prettier": "^2.6.1"
+    "node-loader": "^2.0.0",
+    "prettier": "^2.6.1",
+    "ts-loader": "^9.2.8",
+    "tty-browserify": "^0.0.1",
+    "webpack": "^5.71.0",
+    "webpack-cli": "^4.9.2",
+    "wepack-cli": "^0.0.1-security"
   },
   "bugs": {
     "url": "https://github.com/stiglicode/builder/issues"
